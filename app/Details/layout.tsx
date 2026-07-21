@@ -1,10 +1,11 @@
 import SearchUser from "@/component/SearchUser";
 
-export default function DashboardLayout({ children }:any) {
+export default function DashboardLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
     return (
-        <main>
-            <SearchUser/>
-            {children}
-        </main>
+         <main>{children}</main>
     )
 }
