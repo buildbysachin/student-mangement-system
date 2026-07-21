@@ -2,9 +2,7 @@ import DeleteModel from "@/component/Deletebutton";
 import UpdateModel from "@/component/Updatebutton";
 import connectDB from "@/lib/db"
 import User from "@/models/User"
-import { SquarePen } from "lucide-react";
 import mongoose from "mongoose";
-import Link from "next/link";
 
 const Details = async (
     {searchParams,}:{
