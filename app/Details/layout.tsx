@@ -1,11 +1,17 @@
 import SearchUser from "@/component/SearchUser";
+import { Suspense } from "react";
 
 export default function DashboardLayout({
-  children,
+    children,
 }: {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }) {
     return (
-         <main>{children}</main>
+        <main>
+            <Suspense fallback={<div>Loading...</div>}>
+                <SearchUser />
+            </Suspense>
+            {children}
+        </main>
     )
 }
