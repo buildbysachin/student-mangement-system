@@ -1,6 +1,6 @@
 "use client"
 
-import { deleteUser } from "@/app/action/page";
+import { deleteUser } from "../actions/user";
 import { useState } from "react";
 
 const DeleteModel = (

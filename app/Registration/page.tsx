@@ -1,4 +1,4 @@
-import { createUser } from "../action/page";
+import { createUser } from "@/actions/user";
 
 const Registration =()=>{
     const inputStyle = "bg-slate-600 text-white p-2"

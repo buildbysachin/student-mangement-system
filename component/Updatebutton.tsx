@@ -1,6 +1,6 @@
 "use client"
 
-import { updateUser } from "@/app/action/page";
+import { updateUser } from "../actions/user";
 import { SquarePen } from "lucide-react";
 import { useState } from "react";
 
