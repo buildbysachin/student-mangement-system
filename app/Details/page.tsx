@@ -56,10 +56,10 @@ const Details = async (
                                     <td>{user.age}</td>
                                     <td>{user.course}</td>
                                     <td className=" p-1 rounded">
-                                       {/* <UpdateModel user={JSON.parse(JSON.stringify(user))}/> */}
+                                       <UpdateModel user={JSON.parse(JSON.stringify(user))}/>
                                     </td>
                                     <td className="bg-red-500 p-1 rounded">
-                                        {/* <DeleteModel id={user._id.toString()}/> */}
+                                        <DeleteModel id={user._id.toString()}/>
                                     </td>
                                 </tr>
                             )
