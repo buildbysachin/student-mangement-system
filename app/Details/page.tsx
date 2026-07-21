@@ -13,6 +13,8 @@ const Details = async (
     const course = resolvedParams?.course || "";
     await connectDB()
 
+    console.log("Connected");
+
     const filterQuery:any = {};
 
     if(query){
@@ -27,6 +29,8 @@ const Details = async (
     }
 
     const users = await User.find(filterQuery)
+
+    console.log(users);
     return (
         <div className="bg-slate-600 min-h-screen p-3 text-white">
             <div className="flex md:justify-center overflow-x-auto">
