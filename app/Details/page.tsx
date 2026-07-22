@@ -19,8 +19,7 @@ const Details = async (
 
     if(query){
         filterQuery.$or = [
-            {name:{$regex:query, $options: "i" }},
-            {email:{$regex:query, $options: "i"}}
+            {name:{$regex:query, $options: "i" }}
         ]
     }
 
