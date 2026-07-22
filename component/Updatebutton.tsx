@@ -65,6 +65,7 @@ const UpdateModel = ({ user }: { user: any }) => {
                             </button>
                             <button
                                 className="bg-gray-500 rounded py-2 px-4 text-white"
+                                onClick={()=>{setIsUpdate(false)}}
                             >
                                 cancel
                             </button>
