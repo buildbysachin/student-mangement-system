@@ -3,6 +3,8 @@ import UpdateModel from "@/component/Updatebutton";
 import connectDB from "@/lib/db"
 import User from "@/models/User"
 
+export const dynamic = "force-dynamic";
+
 const Details = async (
     {searchParams,}:{
         searchParams?:Promise<{ query?:string; course?:string}>
@@ -13,13 +15,12 @@ const Details = async (
     const course = resolvedParams?.course || "";
     await connectDB()
 
-    console.log("Connected");
-
     const filterQuery:any = {};
 
     if(query){
         filterQuery.$or = [
-            {name:{$regex:query, $options: "i" }}
+            {name:{$regex:query, $options: "i" }},
+            {email:{$regex:query, $options: "i"}}
         ]
     }
 
@@ -28,8 +29,10 @@ const Details = async (
     }
 
     const users = await User.find(filterQuery)
+        .sort({ _id: -1 })
+        .limit(100)
+        .lean()
 
-    console.log(users);
     return (
         <div className="bg-slate-600 min-h-screen p-3 text-white">
             <div className="flex md:justify-center overflow-x-auto">
